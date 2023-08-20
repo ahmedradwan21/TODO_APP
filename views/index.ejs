@@ -1,0 +1,65 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <h1>Todo App</h1>
+    <form action="/addtodo" method="post">
+        <input type="text" name="todo" placeholder="Enter a new todo">
+        <button type="submit">Add</button>
+    </form>
+    <ul>
+        <% todos.forEach((todo, index) => { %>
+            <li>
+                <%= todo %>
+                <form action="/complete/<%= index %>" method="post">
+                    <button type="submit">Complete</button>
+                </form>
+                <form action="/delete/<%= index %>" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html> -->
+
+
+<html>
+<head>
+    <title>Todo App</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <h1>Todo App</h1>
+    <form action="/search" method="post">
+        <input type="text" name="search" placeholder="Search for todos">
+        <button type="submit">Search</button>
+    </form>
+    
+    <form action="/addtodo" method="post">
+        <input type="text" name="todo" placeholder="Enter a new todo">
+        <button type="submit">Add</button>
+    </form>
+    <ul>
+        <% todos.forEach((todo, index) => { %>
+            <li class="todo-item <%= todo.completed ? 'completed' : '' %>">
+                <%= todo  %> 
+                <div class="actions">
+                    <form action="/complete/<%= index %>" method="post">
+                        <button type="submit">Complete</button>
+                    </form>
+                    <form action="/delete/<%= index %>" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </li>
+        <% }); %>
+    </ul>
+    
+</body>
+
+</html>
+

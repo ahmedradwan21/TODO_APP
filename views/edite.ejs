@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Todo</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <h1>Edit Todo</h1>
+    <form action="/edit/<%= index %>" method="post">
+        <input type="text" name="newTodo" value="<%= todo %>" placeholder="Edit todo">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
